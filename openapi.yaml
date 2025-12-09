@@ -1,0 +1,79 @@
+openapi: 3.0.4
+info:
+  title: Tax ID Validator
+  description: Tax ID Validator is a comprehensive tool for validating US Tax IDs including Social Security Numbers (SSN), Employer Identification Numbers (EIN), and Individual Taxpayer Identification Numbers (ITIN).
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/taxidvalidator:
+    get:
+      summary: Validate Tax ID
+      description: Tax ID Validator is a comprehensive tool for validating US Tax IDs including Social Security Numbers (SSN), Employer Identification Numbers (EIN), and Individual Taxpayer Identification Numbers (ITIN).
+      operationId: taxidvalidator
+      parameters:
+      - name: taxid
+        in: query
+        schema:
+          type: string
+        required: true
+        description: The US Tax ID to validate (SSN, EIN, or ITIN format)
+        example: 123-45-6789
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  valid: true
+                  taxid: 123-45-6789
+                  type: SSN
+                  type_full: Social Security Number
+                  format: XXX-XX-XXXX
+                  normalized: 123-45-6789
+                  digits_only: '123456789'
+                  masked: '***-**-6789'
+                  last4: '6789'
+                  validation_details:
+                    format_valid: true
+                    area_number_valid: true
+                    group_number_valid: true
+                    serial_number_valid: true
+                  error: 
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
