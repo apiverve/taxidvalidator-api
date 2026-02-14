@@ -1,32 +1,35 @@
 openapi: 3.0.4
 info:
   title: Tax ID Validator
-  description: Tax ID Validator is a comprehensive tool for validating US Tax IDs including Social Security Numbers (SSN), Employer Identification Numbers (EIN), and Individual Taxpayer Identification Numbers (ITIN).
+  description: >-
+    Tax ID Validator is a comprehensive tool for validating US Tax IDs including
+    Social Security Numbers (SSN), Employer Identification Numbers (EIN), and
+    Individual Taxpayer Identification Numbers (ITIN).
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/taxidvalidator:
     get:
       summary: Validate Tax ID
-      description: Tax ID Validator is a comprehensive tool for validating US Tax IDs including Social Security Numbers (SSN), Employer Identification Numbers (EIN), and Individual Taxpayer Identification Numbers (ITIN).
+      description: Validate US Tax IDs (SSN, EIN, ITIN)
       operationId: taxidvalidator
       parameters:
-      - name: taxid
-        in: query
-        schema:
-          type: string
-        required: true
-        description: The US Tax ID to validate (SSN, EIN, or ITIN format)
-        example: 123-45-6789
+        - name: taxid
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The US Tax ID to validate (SSN, EIN, or ITIN format)
+          example: 123-45-6789
       responses:
         '200':
           description: Successful Response
@@ -42,11 +45,11 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   valid: true
                   taxid: 123-45-6789
@@ -62,13 +65,13 @@ paths:
                     area_number_valid: true
                     group_number_valid: true
                     serial_number_valid: true
-                  error: 
+                  error: null
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -76,4 +79,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
