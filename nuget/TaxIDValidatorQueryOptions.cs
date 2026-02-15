@@ -12,7 +12,6 @@ namespace APIVerve.API.TaxIDValidator
     {
         /// <summary>
         /// The US Tax ID to validate (SSN, EIN, or ITIN format)
-        /// Example: 123-45-6789
         /// </summary>
         [JsonProperty("taxid")]
         public string Taxid { get; set; }
