@@ -48,14 +48,12 @@ namespace APIVerve.API.TaxIDValidator
         public string Normalized { get; set; }
 
         [JsonProperty("digits_only")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long DigitsOnly { get; set; }
 
         [JsonProperty("masked")]
         public string Masked { get; set; }
 
         [JsonProperty("last4")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long Last4 { get; set; }
 
         [JsonProperty("validation_details")]
