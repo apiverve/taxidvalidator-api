@@ -231,8 +231,9 @@ from apiverve_taxidvalidator.apiClient import TaxidvalidatorAPIClient
 
 api = TaxidvalidatorAPIClient("[YOUR_API_KEY]")
 
+query = { "taxid": "123-45-6789" }
+
 try:
-    query = { "taxid": "123-45-6789" }
     result = api.execute(query)
     print(result)
 finally:
