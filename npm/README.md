@@ -131,12 +131,15 @@ async function makeRequest() {
     "digits_only": "123456789",
     "masked": "***-**-6789",
     "last4": "6789",
+    "is_placeholder": true,
     "validation_details": {
       "format_valid": true,
       "area_number_valid": true,
       "group_number_valid": true,
       "serial_number_valid": true
     },
+    "risk_score": 35,
+    "risk_level": "medium",
     "error": null
   }
 }
