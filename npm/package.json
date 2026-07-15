@@ -1,12 +1,12 @@
 {
   "name": "@apiverve/taxidvalidator",
-  "version": "1.1.14",
+  "version": "1.2.0",
   "description": "Tax ID Validator is a comprehensive tool for validating US Tax IDs including Social Security Numbers (SSN), Employer Identification Numbers (EIN), and Individual Taxpayer Identification Numbers (ITIN).",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=18.0.0"
   },
   "files": [
     "index.js",
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    ""
+    "tax id", "ssn validator", "ein validator", "itin validator", "social security"
   ],
   "author": {
     "name": "APIVerve",
@@ -41,8 +41,7 @@
     "dotenv": "^16.4.7"
   },
   "dependencies": {
-    "node-fetch": "^3.3.2",
-    "promise": "^8.3.0",
-    "axios": "1.13.2"
+    "axios": "1.13.2",
+    "form-data": "^4.0.1"
   }
 }
