@@ -4,33 +4,48 @@ declare module '@apiverve/taxidvalidator' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface taxidvalidatorResponse {
     status: string;
     error: string | null;
     data: TaxIDValidatorData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface TaxIDValidatorData {
-      valid:             boolean;
-      taxid:             string;
-      type:              string;
-      typeFull:          string;
-      format:            string;
-      normalized:        string;
-      digitsOnly:        string;
-      masked:            string;
-      last4:             string;
+      valid:             boolean | null;
+      taxid:             null | string;
+      type:              null | string;
+      typeFull:          null | string;
+      format:            null | string;
+      normalized:        null | string;
+      digitsOnly:        null | string;
+      masked:            null | string;
+      last4:             null | string;
+      isPlaceholder:     boolean | null;
       validationDetails: ValidationDetails;
+      riskScore:         number | null;
+      riskLevel:         null | string;
       error:             null;
   }
   
   interface ValidationDetails {
-      formatValid:       boolean;
-      areaNumberValid:   boolean;
-      groupNumberValid:  boolean;
-      serialNumberValid: boolean;
+      formatValid:       boolean | null;
+      areaNumberValid:   boolean | null;
+      groupNumberValid:  boolean | null;
+      serialNumberValid: boolean | null;
   }
 
   export default class taxidvalidatorWrapper {
