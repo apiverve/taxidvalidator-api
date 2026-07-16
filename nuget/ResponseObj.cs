@@ -25,12 +25,15 @@ namespace APIVerve.API.TaxIDValidator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("valid")]
-        public bool Valid { get; set; }
+        public bool? Valid { get; set; }
 
         [JsonProperty("taxid")]
         public string Taxid { get; set; }
@@ -48,16 +51,25 @@ namespace APIVerve.API.TaxIDValidator
         public string Normalized { get; set; }
 
         [JsonProperty("digits_only")]
-        public long DigitsOnly { get; set; }
+        public long? DigitsOnly { get; set; }
 
         [JsonProperty("masked")]
         public string Masked { get; set; }
 
         [JsonProperty("last4")]
-        public long Last4 { get; set; }
+        public long? Last4 { get; set; }
+
+        [JsonProperty("is_placeholder")]
+        public bool? IsPlaceholder { get; set; }
 
         [JsonProperty("validation_details")]
         public ValidationDetails ValidationDetails { get; set; }
+
+        [JsonProperty("risk_score")]
+        public long? RiskScore { get; set; }
+
+        [JsonProperty("risk_level")]
+        public string RiskLevel { get; set; }
 
         [JsonProperty("error")]
         public object Error { get; set; }
@@ -66,15 +78,27 @@ namespace APIVerve.API.TaxIDValidator
     public partial class ValidationDetails
     {
         [JsonProperty("format_valid")]
-        public bool FormatValid { get; set; }
+        public bool? FormatValid { get; set; }
 
         [JsonProperty("area_number_valid")]
-        public bool AreaNumberValid { get; set; }
+        public bool? AreaNumberValid { get; set; }
 
         [JsonProperty("group_number_valid")]
-        public bool GroupNumberValid { get; set; }
+        public bool? GroupNumberValid { get; set; }
 
         [JsonProperty("serial_number_valid")]
-        public bool SerialNumberValid { get; set; }
+        public bool? SerialNumberValid { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
