@@ -1,13 +1,12 @@
 Tax ID Validator API
 ============
 
-Tax ID Validator is a comprehensive tool for validating US Tax IDs including Social Security Numbers (SSN), Employer Identification Numbers (EIN), and Individual Taxpayer Identification Numbers (ITIN).
+Tax ID Validator checks US tax identification numbers including SSNs, EINs, and ITINs for structural validity. It accepts formatted or unformatted strings and returns validation results, normalized formatting, masked numbers, and the last four digits.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Tax ID Validator API](https://apiverve.com/marketplace/taxidvalidator?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-taxidvalidator.svg)](https://pypi.org/project/apiverve-taxidvalidator/)
+
+This is a Python wrapper for the [Tax ID Validator API](https://apiverve.com/marketplace/taxidvalidator?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-taxidvalidator
 
 ## Configuration
 
-Before using the taxidvalidator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Tax ID Validator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -60,7 +59,7 @@ except Exception as e:
 
 ## Usage
 
-The Tax ID Validator API documentation is found here: [https://docs.apiverve.com/ref/taxidvalidator](https://docs.apiverve.com/ref/taxidvalidator?utm_source=pypi&utm_medium=readme).
+The Tax ID Validator API documentation is found here: [https://docs.apiverve.com/ref/taxidvalidator](https://docs.apiverve.com/ref/taxidvalidator?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -111,12 +110,15 @@ print(result)
     "digits_only": "123456789",
     "masked": "***-**-6789",
     "last4": "6789",
+    "is_placeholder": true,
     "validation_details": {
       "format_valid": true,
       "area_number_valid": true,
       "group_number_valid": true,
       "serial_number_valid": true
     },
+    "risk_score": 35,
+    "risk_level": "medium",
     "error": null
   }
 }
@@ -245,7 +247,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -256,12 +258,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

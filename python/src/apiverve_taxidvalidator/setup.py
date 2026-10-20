@@ -10,14 +10,14 @@ if os.path.exists(requirements_file):
 
 setup(
     name='apiverve_taxidvalidator',
-    version='1.1.14',
+    version='1.2.2',
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
-    description='Tax ID Validator is a comprehensive tool for validating US Tax IDs including Social Security Numbers (SSN), Employer Identification Numbers (EIN), and Individual Taxpayer Identification Numbers (ITIN).',
+    description='Tax ID Validator checks US tax identification numbers including SSNs, EINs, and ITINs for structural validity. It accepts formatted or unformatted strings and returns validation results, normalized formatting, masked numbers, and the last four digits.',
     author='APIVerve',
     author_email='hello@apiverve.com',
-    url='https://apiverve.com/marketplace/taxidvalidator?utm_source=pypi&utm_medium=homepage',
+    url='https://apiverve.com/marketplace/taxidvalidator?utm_source=pypi&utm_medium=referral&utm_content=homepage',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',
