@@ -1,13 +1,13 @@
-# [Tax ID Validator API](https://apiverve.com/marketplace/taxidvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Tax ID Validator API](https://apiverve.com/marketplace/taxidvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Tax ID Validator is a comprehensive tool for validating US Tax IDs including Social Security Numbers (SSN), Employer Identification Numbers (EIN), and Individual Taxpayer Identification Numbers (ITIN).
+Tax ID Validator checks US tax identification numbers including SSNs, EINs, and ITINs for structural validity. It accepts formatted or unformatted strings and returns validation results, normalized formatting, masked numbers, and the last four digits.
 
 The Tax ID Validator API provides a simple, reliable way to integrate tax id validator functionality into your applications. Built for developers who need production-ready tax id validator capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/taxidvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/taxidvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/taxidvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/taxidvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -161,7 +161,7 @@ go get github.com/apiverve/taxidvalidator-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Tax ID Validator API](https://apiverve.com/marketplace/taxidvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Tax ID Validator API](https://apiverve.com/marketplace/taxidvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/taxidvalidator](https://docs.apiverve.com/ref/taxidvalidator)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -191,11 +191,46 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Tax ID Validator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "valid": true,
+    "taxid": "123-45-6789",
+    "type": "SSN",
+    "type_full": "Social Security Number",
+    "format": "XXX-XX-XXXX",
+    "normalized": "123-45-6789",
+    "digits_only": "123456789",
+    "masked": "***-**-6789",
+    "last4": "6789",
+    "is_placeholder": true,
+    "validation_details": {
+      "format_valid": true,
+      "area_number_valid": true,
+      "group_number_valid": true,
+      "serial_number_valid": true
+    },
+    "risk_score": 35,
+    "risk_level": "medium",
+    "error": null
+  }
 }
 ```
 
@@ -203,7 +238,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Tax ID Validator API](https://apiverve.com/marketplace/taxidvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Tax ID Validator API](https://apiverve.com/marketplace/taxidvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

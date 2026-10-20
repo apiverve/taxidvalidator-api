@@ -2,9 +2,10 @@ openapi: 3.0.4
 info:
   title: Tax ID Validator
   description: >-
-    Tax ID Validator is a comprehensive tool for validating US Tax IDs including
-    Social Security Numbers (SSN), Employer Identification Numbers (EIN), and
-    Individual Taxpayer Identification Numbers (ITIN).
+    Tax ID Validator checks US tax identification numbers including SSNs, EINs,
+    and ITINs for structural validity. It accepts formatted or unformatted
+    strings and returns validation results, normalized formatting, masked
+    numbers, and the last four digits.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +20,7 @@ servers:
 paths:
   /v1/taxidvalidator:
     get:
-      summary: Validate Tax ID
+      summary: Tax ID Validator
       description: Validate US Tax IDs (SSN, EIN, ITIN)
       operationId: taxidvalidator
       parameters:
