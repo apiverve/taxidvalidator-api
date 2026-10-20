@@ -1,13 +1,12 @@
-TaxIDValidator API
+Tax ID Validator API
 ============
 
-Tax ID Validator is a comprehensive tool for validating US Tax IDs including Social Security Numbers (SSN), Employer Identification Numbers (EIN), and Individual Taxpayer Identification Numbers (ITIN).
+Tax ID Validator checks US tax identification numbers including SSNs, EINs, and ITINs for structural validity. It accepts formatted or unformatted strings and returns validation results, normalized formatting, masked numbers, and the last four digits.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [TaxIDValidator API](https://apiverve.com/marketplace/taxidvalidator?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.TaxIDValidator.svg)](https://www.nuget.org/packages/APIVerve.API.TaxIDValidator)
+
+This is a .NET wrapper for the [Tax ID Validator API](https://apiverve.com/marketplace/taxidvalidator?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the taxidvalidator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the Tax ID Validator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,8 +60,8 @@ class Program
         var apiClient = new TaxIDValidatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new TaxIDValidatorQueryOptions {
-    Taxid = "123-45-6789"
-};
+            Taxid = "123-45-6789"
+        };
 
         // Make the API call
         try
@@ -92,13 +91,13 @@ class Program
 
 ## Usage
 
-The TaxIDValidator API documentation is found here: [https://docs.apiverve.com/ref/taxidvalidator](https://docs.apiverve.com/ref/taxidvalidator?utm_source=nuget&utm_medium=readme).
+The Tax ID Validator API documentation is found here: [https://docs.apiverve.com/ref/taxidvalidator](https://docs.apiverve.com/ref/taxidvalidator?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-TaxIDValidator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+Tax ID Validator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -125,8 +124,8 @@ public class Example
         var apiClient = new TaxIDValidatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new TaxIDValidatorQueryOptions {
-    Taxid = "123-45-6789"
-};
+            Taxid = "123-45-6789"
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -157,8 +156,8 @@ public class Example
         var apiClient = new TaxIDValidatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new TaxIDValidatorQueryOptions {
-    Taxid = "123-45-6789"
-};
+            Taxid = "123-45-6789"
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -194,8 +193,8 @@ public class Example
         var apiClient = new TaxIDValidatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new TaxIDValidatorQueryOptions {
-    Taxid = "123-45-6789"
-};
+            Taxid = "123-45-6789"
+        };
 
         try
         {
@@ -250,8 +249,8 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new TaxIDValidatorQueryOptions {
-    Taxid = "123-45-6789"
-};
+            Taxid = "123-45-6789"
+        };
 
         try
         {
@@ -394,7 +393,7 @@ using (var apiClient = new TaxIDValidatorAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -405,12 +404,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
